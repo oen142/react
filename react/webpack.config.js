@@ -19,17 +19,19 @@ module.exports = {
                 presets: [
                     ['@babel/preset-env', {
                         targets: {
-                            browsers: ['> 5% in KR'],
+                          browsers: ['> 5% in KR'],
                         },
                         debug: true,
                     }],
                     '@babel/preset-react',
                 ],
-                plugins: ['@babel/plugin-syntax-class-properties','@babel/plugin-proposal-class-properties'],
+                plugins: ['@babel/plugin-syntax-class-properties'],
             },
         }],
     },
     plugins: [
+        new webpack.LoaderOptionsPlugin({debug:true}),
+
     ],
     output: {
         path: path.join(__dirname, 'dist'),
